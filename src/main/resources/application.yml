@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: 123456
+    url: jdbc:postgresql://localhost:5432/training
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
+  sql:
+    init:
+      platform: postgres
+      mode: always
+      continue-on-error: true
+  server:
+    error:
+      include-message: always
+  kafka:
+    bootstrap-servers: localhost:9092
+
+logging:
+  level:
+    root: info
+  file:
+    path: logs
+    max-size: 2KB
+    max-history: 2
